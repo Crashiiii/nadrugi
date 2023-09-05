@@ -1,0 +1,67 @@
+<div class="app-comp__title" *ngIf="(title$ | async) !== ''">
+  <a
+    class="app-comp__title-link"
+    routerLink="/homepage"
+    routerLinkActive="active"
+  >
+    <mat-icon>K</mat-icon>KosztyProcesu.com.pl
+  </a>
+  {{ title$ | async }}
+
+  <li class="app-comp__list-item" *ngIf="isLoggedIn; else notLoggedIn">
+    <a
+      class="app-comp__login"
+      (click)="logout()"
+      routerLink="/homepage"
+      routerLinkActive="active"
+      >Wyloguj</a
+    >
+  </li>
+
+  <ng-template #notLoggedIn>
+    <li class="app-comp__list-item">
+      <a class="app-comp__login" routerLink="/login" routerLinkActive="active"
+        >Zaloguj</a
+      >
+    </li>
+    <li class="app-comp__list-item">
+      <a
+        class="app-comp__registration"
+        routerLink="/registration"
+        routerLinkActive="active"
+        >Rejestracja</a
+      >
+    </li>
+  </ng-template>
+
+  <div class="app-comp__login-status" *ngIf="user$ | async as user">
+    Witaj, {{ user.email }}!
+  </div>
+</div>
+
+<ul class="app-comp__list">
+  <li class="app-comp__list-item">
+    <a class="app-comp__link" routerLink="/homepage" routerLinkActive="active"
+      >Strona Główna</a
+    >
+  </li>
+  <li class="app-comp__list-item">
+    <a class="app-comp__link" routerLink="/calculator" routerLinkActive="active"
+      >Kalkulator kosztów</a
+    >
+  </li>
+  <li class="app-comp__list-item">
+    <a class="app-comp__link" routerLink="/samples" routerLinkActive="active"
+      >Wzory orzeczeń</a
+    >
+  </li>
+
+  <li class="app-comp__list-item">
+    <a class="app-comp__link" routerLink="/contact" routerLinkActive="active"
+      >Formularz</a
+    >
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+<app-main></app-main>

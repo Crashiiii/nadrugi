@@ -1,0 +1,12 @@
+.app-main {
+  &__footer {
+    position: relative;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+  &__p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+}

@@ -1,0 +1,52 @@
+.app-contact {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    box-shadow: 0 2px 20px rgba($color: #0f2277, $alpha: 1);
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 238.5px;
+    min-width: 400px;
+    max-width: 400px;
+    gap: 14px;
+    margin-left: 10px;
+  }
+
+  &__input {
+    border: 2px solid red;
+  }
+
+  &__Obligation {
+    font-size: 16px;
+  }
+
+  &__table {
+    border-bottom: 1px solid #050505;
+    border-top: 1px solid #050505;
+    border-left: 1px solid #050505;
+    border-right: 1px solid #050505;
+    font-size: 14px;
+  }
+  &__table-th {
+    border-top: 1px solid #050505;
+    border-left: 1px solid #050505;
+    text-align: center;
+  }
+  &__table-separation {
+    border-top: 1px solid #050505;
+    border-left: 1px solid #050505;
+    text-align: center;
+  }
+}

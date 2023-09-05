@@ -1,0 +1,63 @@
+
+<form class="app-calculator__form-container" [formGroup]="formGroup">
+  <input
+    class="app-calculator__input"
+    placeholder="Kwota dochodzona pozwem"
+    type="number"
+    formControlName="kwotaDochodzona"
+    step="0.01"
+  />
+  <input
+    class="app-calculator__input"
+    placeholder="Kwota zasądzona przez sąd (wygrana powoda)"
+    type="number"
+    formControlName="kwotaZasadzona"
+    step="0.01"
+  />
+  <input
+    class="app-calculator__input"
+    placeholder="Koszty poniesione przez powoda"
+    type="number"
+    formControlName="kosztyPowod"
+    step="0.01"
+  />
+  <input
+    class="app-calculator__input"
+    placeholder="Koszty poniesione przez pozwanych"
+    type="number"
+    formControlName="kosztyPozwany"
+    step="0.01"
+  />
+  <input
+    class="app-calculator__input"
+    placeholder="Numer Pkt w Orzeczeniu"
+    type="number"
+    formControlName="punkt"
+    step="0.01"
+  />
+</form>
+<button
+  class="app-calculator__button"
+  mat-raised-button
+  color="primary"
+  [disabled]="!formGroup.valid"
+  (click)="oblicz()"
+>
+  Oblicz
+</button>
+<div
+  class="app-calculator__wynik"
+  *ngIf="showCopyButton"
+  [innerHTML]="wynik"
+></div>
+
+<button
+  class="app-calculator__button2"
+  *ngIf="showCopyButton"
+  mat-raised-button
+  color="primary"
+  (click)="kopiujDoSchowka()"
+>
+  Kopiuj tekst
+</button>
+<div class="app-calculator__wynik">Liczba odwiedzin: {{ visitCount }}</div>

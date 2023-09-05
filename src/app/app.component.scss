@@ -1,0 +1,78 @@
+.app-comp {
+  &__list {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    background-color: rgb(68, 68, 192);
+    padding-inline-start: 19%;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 300px;
+    margin-inline-end: 300px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  &__login {
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+    color: green;
+  }
+  &__registration {
+    position: absolute;
+    right: 85px;
+    text-decoration: none;
+    color: green;
+  }
+  &__list-item {
+    list-style: none;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+  &__login-status{
+      position: absolute;
+      right: 85px;
+      font-size: 20px;
+      text-decoration: none;
+      color: green;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 20px rgba($color: #0f2277, $alpha: 1);
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 35px;
+    left: 0px;
+  }
+  &__title-link {
+    position: absolute;
+    left: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: green;
+    ;
+  }
+  @media screen and (max-width: 1125px) {
+    &__list {
+      padding-inline-start: 10%;
+      margin-inline-start: 2%;
+      margin-inline-end: 2%;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

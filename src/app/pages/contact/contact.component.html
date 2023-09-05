@@ -1,0 +1,76 @@
+<form
+  class="app-contact__form-container"
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+>
+  <input
+    class="app-contact__input"
+    placeholder="Podaj imię*"
+    type="text"
+    formControlName="firstname"
+  />
+  <input
+    class="app-contact__input"
+    placeholder="Podaj nazwisko*"
+    type="text"
+    formControlName="lastname"
+  />
+  <input
+    class="app-contact__input"
+    placeholder="Podaj wiek*"
+    type="number"
+    formControlName="age"
+  />
+  <input
+    class="app-contact__input"
+    placeholder="Podaj e-mail*"
+    type="email"
+    formControlName="email"
+  />
+  <input
+    class="app-contact__input"
+    placeholder="Powód kontaktu*"
+    type="email"
+    formControlName="description"
+  />
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!formGroup.valid"
+  >
+    Wyślij
+  </button>
+</form>
+<p class="app-contact__Obligation">*-Pola Obowiązkowe</p>
+
+<table class="app-contact__table">
+  <thead>
+    <tr>
+      <th class="app-contact__table-th">Imię</th>
+      <th class="app-contact__table-th">Nazwisko</th>
+      <th class="app-contact__table-th">Wiek</th>
+      <th class="app-contact__table-th">Email</th>
+      <th class="app-contact__table-th">Opis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of details$ | async">
+      <td class="app-contact__table-separation">{{ d.firstname }}</td>
+      <td class="app-contact__table-separation">{{ d.lastname }}</td>
+      <td class="app-contact__table-separation">{{ d.age }}</td>
+      <td class="app-contact__table-separation">{{ d.email }}</td>
+      <td class="app-contact__table-separation">{{ d.description }}</td>
+      <td>
+        <!-- Przyciski dla każdego wiersza, np. edycja, usuwanie itp. -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<mat-paginator
+  [length]="paginatorLength"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
